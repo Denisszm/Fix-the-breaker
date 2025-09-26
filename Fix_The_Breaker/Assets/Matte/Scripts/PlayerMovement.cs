@@ -6,19 +6,32 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
 
     public Rigidbody2D rb;
+    public Transform playerBody;
 
 
     void Update()
     {
-        float MouseX = Input.GetAxisRaw("Horizontal");
-        float MouseY = Input.GetAxisRaw("Vertical");
+        //Parralax
 
-        moveDirection = new Vector2(MouseX, MouseY).normalized;
+        //Movement
+        float MovementX = Input.GetAxisRaw("Horizontal");
+        float MovementY = Input.GetAxisRaw("Vertical");
+        
+
+        moveDirection = new Vector2(MovementX, MovementY).normalized;
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed);
+    }
+
+    void ParralaxEffekt()
+    {
+        if (Input.GetButtonDown("W"))
+        { 
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
  
