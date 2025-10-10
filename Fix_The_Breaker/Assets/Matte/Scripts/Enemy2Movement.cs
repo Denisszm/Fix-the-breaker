@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy2Movement : MonoBehaviour
 {
     public Transform playerBody;
     public float speed;
@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -20,11 +21,12 @@ public class EnemyMovement : MonoBehaviour
         Vector2 direction = playerBody.position - transform.position;
         direction.Normalize();
 
-
         if(distance < 10)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, playerBody.position, speed * Time.deltaTime);
         }
+
+
 
         if (direction.x < 0)
         {
