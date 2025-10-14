@@ -8,9 +8,9 @@ public class NewEmptyCSharpScript
     }
     class Rooms
     {
-        [SerializeField] private Vector2 _pos = new Vector2();
+        [SerializeField] private Vector2 pos = new Vector2();
 
-        public enum type
+        public enum Type
         {
             Breaker,
             Breakroom,
