@@ -29,6 +29,5 @@ public class MainMenuFunctions : MonoBehaviour
     public void OptionsVolyume()
     {
         float value = slider.value;
-
     }
 }
