@@ -16,12 +16,16 @@ public class VolumeChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SetMasterVolume();
     }
 
+    public float GetSliderValue()
+    {
+        return masterSlider.value - 80;
+    }
     public void SetMasterVolume()
     {
-        masterLevel = masterSlider.value;
+        masterLevel = GetSliderValue();
         masterMixer.SetFloat("MasterVolume", masterLevel);
     }
 }

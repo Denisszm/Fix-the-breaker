@@ -21,13 +21,15 @@ public class Enemy2Movement : MonoBehaviour
         Vector2 direction = playerBody.position - transform.position;
         direction.Normalize();
 
+
+        //enemy fov
         if(distance < 10)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, playerBody.position, speed * Time.deltaTime);
         }
 
 
-
+        //Sprite run around
         if (direction.x < 0)
         {
             spriteRenderer.flipX = true;
