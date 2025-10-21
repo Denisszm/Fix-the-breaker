@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class NewEmptyCSharpScript
 {
-    class Roomgeneration : MonoBehaviour
+    class roomgeneration : MonoBehaviour
     {
         [SerializeField] private int roomCount = 5;
         private List<Rooms> rooms = new List<Rooms>();
